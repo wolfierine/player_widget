@@ -1,0 +1,95 @@
+$main-color: #60558f
+$primary-font: 'Lato', sans-serif
+
+html 
+	font:
+		size: 10px
+		family: $primary-font, Arial, sans-serif
+
+body
+	margin: 0
+	padding: 0
+	width: 100%	
+	height: 100vh
+	background: 
+		color: #2a153a
+		image: linear-gradient(to bottom, #8287bc, #2a153a)
+		repeat: no-repeat 
+		size: cover
+	display: flex
+	justify-content: center
+	align-items: center	
+
+h1, h2, h3, h4, h5, h6, ul
+	margin: 0
+	padding: 0
+
+ul
+	list-style-type: none
+
+a 
+	text-decoration: none 
+	color: $main-color
+	display: block
+
+.container
+	margin: 0 auto
+	width: 400px
+	height: 500px
+	position: relative
+	overflow: hidden
+	border-radius: 30px
+
+	&::after
+		content: ""
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		z-index: 99
+		height: 80px 
+		background: linear-gradient(to top, #fff, transparent)
+
+
+.card
+	width: 100%
+	height: 100%
+	box-shadow: 5px 10px 15px #333
+	background: 
+		color: #eeeff5
+	border-radius: 30px	
+	position: absolute
+	top: 0
+	left: 0
+	box-sizing: border-box
+
+
+.hide 
+	display: none
+.play-pause
+	.fa-play
+		top: 0
+	.fa-pause 
+		top: -100%	
+
+.fa-play, .fa-pause
+	transition: top .7s cubic-bezier(0.6, -0.28, 0.74, 0.05)
+.playpause
+	overflow: hidden
+.fa-pause 
+	top: 0	
+.fa-play
+	top: 100%
+.fa.fa-heart
+	color: #ed5e74
+	transition: color .3s ease
+	&:hover
+		color: #da2944
+.fa.fa-share-alt
+	color: $main-color
+	transition: color .3s ease 
+	&:hover 
+		color: #ed5e74
+
+@import play-view
+@import list-view		

@@ -1,0 +1,140 @@
+.play-view 
+	z-index: 999
+	overflow: hidden
+	transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+	.song-theme
+		height: 350px
+		background: 
+			image: url("../images/1.jpeg")
+			position: center center
+			repeat: no-repeat
+			size: cover
+		position: relative
+		
+		.song-option, .song-info
+			position: absolute
+			left: 0
+			width: 100%
+			height: 70px
+
+		.song-option
+			top: 0
+			display: flex
+			justify-content: center
+			align-items: center
+
+			ul 
+				li 
+					display: inline-block
+					margin: 0 10px
+
+		.song-info
+			bottom: 0
+
+			h2, h3
+				color: #fff
+				text-align: center
+			h2 
+				font: 
+					size: 18px
+				margin-top: 10px	
+			h3 
+				font: 
+					size: 14px
+				margin-top: 5px				
+
+		.transparent 
+			background:
+				color: rgba(0,0,0,.5)
+			
+
+	.song-nav
+		height: 150px
+		display: flex
+		justify-content: center
+		align-items: center
+		position: relative
+
+		progress 
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 10px 
+			background: #ed5e74
+			z-index: 99
+			appearance: none 
+			border: 0
+			background-color: #f3f3f3
+			color: #ed5e74
+			transition: all 15s ease
+
+			&::-webkit-progress-bar 
+				background-color: transparent
+			&::-webkit-progress-value
+				background-color: #ed5e74
+				transition: all 15s ease
+			&::-webkit-progress-bar
+				background-color: transparent		
+
+		> ul 
+			width: 100%
+			display: flex
+			justify-content: space-around
+			align-items: center
+
+		.player-buttons
+			display: flex
+			flex-direction: row 
+			justify-content: center
+			align-items: center
+			color: #60558f	
+
+			li 
+				margin: 0 5px
+
+				.playpause 	
+					position: relative
+
+					&::after
+						content: ""
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: 100%
+						z-index: 99
+						border-top: 4px solid #c3bdbd
+						border-right: 4px solid #c3bdbd
+						border-bottom: 4px solid transparent
+						border-left: 4px solid transparent
+						border-radius: 50%
+						transform: rotate(45deg)
+						box-sizing: border-box
+
+@keyframes beatingHeart
+	0%
+		transform: scale(1)
+	80%
+		transform: scale(1.5)
+	90%
+		transform: scale(1)
+	100%
+		transform: scale(1.5)		
+
+
+.fa.fa-heart 
+	transform: scale(1)
+nav.song-nav ul .fa.fa-heart:hover
+	animation: beatingHeart .7s linear
+.fa.fa-refresh, .fa.fa-random, .fa.fa-repeat 
+	color: #fff	
+.fa.fa-play ~ .fa.fa-circle
+	color: #60558f		
+.hamburger-menu .fa.fa-bars 
+	color: #aaa
+	position: absolute
+	top: 0
+	right: 0
+	margin:  23px 15px
